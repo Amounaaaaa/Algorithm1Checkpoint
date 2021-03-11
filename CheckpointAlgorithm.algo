@@ -1,0 +1,33 @@
+ALGORITHM Checkpoint
+VAR
+  i:INTEGER=0;
+  j:INTEGER=0;
+  Sentence:STRING
+  Voyelles:ARRAY_OF  STRING= ['a', 'e', 'i', 'o', 'u', 'y'];
+  NbCaracter:INTEGER=0;
+  NbWords:INTEGER=0;
+  NbVoyelles:INTEGER=0;
+   
+BEGIN
+ FOR i From 0 TO Sentence.length  DO
+
+        WHILE (sentence[i]<>".") DO
+            i:=i+1;
+            IF (sentence[i]<>" ") THEN
+            NbCaracter:=NbCaracter+1;
+        END_WHILE
+        IF (sentence[i]==" ") THEN
+          NbWords:=NbWords+1;
+        END_IF
+        FOR j From 0  TO Voyelles.length   DO
+         
+           IF (Voyelles[j]=Sentence[i]) THEN
+               NbVoyelles:=NbVoyelles+1;
+           END_IF
+         END_FOR
+     
+ END_FOR   
+ write(NbCaracter)
+ write(NbWords)
+ write(NbVoyelles)
+END
